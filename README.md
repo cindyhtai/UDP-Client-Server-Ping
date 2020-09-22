@@ -27,6 +27,7 @@ The server will read in the input arguments, bind to the specified IP address an
 In a ping request, the application data has the following format:
 
  0           1         2         3         4 (bytes)
+ 
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
  |        Message Type (1= request)         |
  --------------------------------------------
@@ -36,6 +37,7 @@ In a ping request, the application data has the following format:
 In a ping response, the application data has the following format:
 
  0          1          2          3        4 (bytes)
+ 
  +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
  |        Message Type (2 = response)       |
  --------------------------------------------
