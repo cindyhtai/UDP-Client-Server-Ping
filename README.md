@@ -24,22 +24,3 @@ ping message
 
 The server will read in the input arguments, bind to the specified IP address and port, and wait in an infinite loop to receive ping requests from the client. On receiving a ping request, the server program will randomly4 decide whether to respond to ping requests to simulate network packet loss. In the case that the server responds, it sends a ping response containing the appropriate message type, and client sequence number. In the case that the server decides not to respond, no ping response is sent, and the server waits for another ping request. To implement random “loss”, the server should generate a random integer between 0 and 10 and if the result is < 4, do not respond to the packet.
 
-In a ping request, the application data has the following format:
-
- 0           1         2         3         4 (bytes)
- 
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
- |        Message Type (1= request)         |
- --------------------------------------------
- |      Message sequence number (e.g. 5)    |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
-
-In a ping response, the application data has the following format:
-
- 0          1          2          3        4 (bytes)
- 
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
- |        Message Type (2 = response)       |
- --------------------------------------------
- |      Message sequence number (e.g. 5)    |
- +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
